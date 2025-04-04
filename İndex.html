@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Seninleyim</title>
+    <style>
+        body {
+            background-color: #8B0000;
+            color: white;
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        h1, p {
+            margin: 20px;
+            font-size: 20px;
+        }
+
+        .container {
+            padding: 30px;
+        }
+
+        .heart-background {
+            background: url('https://www.transparenttextures.com/patterns/heart.png');
+            background-size: 30px;
+            padding: 50px 20px;
+        }
+
+        .lyrics {
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .song, .message {
+            margin-bottom: 30px;
+            font-size: 18px;
+            text-align: center;
+        }
+
+        .button-container {
+            margin-top: 30px;
+        }
+
+        .heart-button {
+            background-color: red;
+            color: white;
+            font-size: 20px;
+            padding: 10px 30px;
+            border: none;
+            cursor: pointer;
+            border-radius: 50px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            position: relative;
+            display: inline-block;
+            font-weight: bold;
+        }
+
+        .heart-button:hover {
+            background-color: #ff5c5c;
+        }
+
+        .heart-button span {
+            position: absolute;
+            animation: heartPulse 1.5s infinite;
+        }
+
+        @keyframes heartPulse {
+            0% {
+                transform: scale(1);
+                opacity: 1;
+            }
+            50% {
+                transform: scale(1.5);
+                opacity: 0.7;
+            }
+            100% {
+                transform: scale(1);
+                opacity: 1;
+            }
+        }
+
+        iframe {
+            width: 300px;
+            height: 200px;
+            margin-top: 20px;
+        }
+
+        .final-message {
+            font-size: 22px;
+            font-style: italic;
+            color: white;
+            margin-top: 50px;
+        }
+
+        .final-heart {
+            font-size: 30px;
+            color: red;
+            margin-top: 20px;
+        }
+
+        .cat-emoji {
+            font-size: 40px;
+            margin-top: 20px;
+        }
+
+        .romantic-poem {
+            font-size: 18px;
+            color: #FFD700;
+            margin-top: 30px;
+            font-style: italic;
+        }
+
+        .hashtag {
+            font-size: 20px;
+            color: white;
+            margin-top: 20px;
+            font-style: normal;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <!-- İlk Yazı: Umutun sana ne kadar değer verdiğini anlatan mesaj -->
+        <div class="heart-background">
+            <h1>Umutun sana ne kadar değer verdiğini ve sevdiğini biliyorsun.</h1>
+            <p>Senin kırmak veya üzmek yapacağı en son şey. Sen çok değerlisin, özelsin ve seni kaybedemez. Hatalarını anladı ve sana sevgisi ve değeri her dakika, her saniye dahada artıyor. Tesadüf değil, kader. İzin ver yaralarını sarsın. Birlikte çok yakışıyorsunuz ve birbirinizi tamamlıyorsunuz. :)</p>
+        </div>
+
+        <!-- Romantik Şiir -->
+        <div class="romantic-poem">
+            <p>Birlikte yazdığımız her satırda, her kelimede kalbim biraz daha seninle doluyor.<br>
+            Her bakışında, her gülüşünde seni biraz daha çok seviyorum.<br>
+            İleriye doğru her adımda, yalnızca seninle olmayı, seninle her anı paylaşmayı hayal ediyorum.<br>
+            Seninle her şey daha güzel, seninle her an değerli.</p>
+        </div>
+
+        <!-- Esaretin Bedeli Aşk Sözleri -->
+        <div class="lyrics">
+            <p><strong>"Aşk, iki ruhun birbirine ulaşmasıdır, her şeyden önce kalbinde."</strong></p>
+            <p><strong>"Aşk, en karanlık zamanlarda bile bir ışık gibi parlayan bir umut."</strong></p>
+        </div>
+
+        <!-- YouTube Müzik Linki -->
+        <div class="song">
+            <h2>Şarkıyı Dinle:</h2>
+            <iframe src="https://www.youtube.com/embed/5TuuFoiUIdw" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+        </div>
+
+        <!-- Buton ile kalp patlaması -->
+        <div class="button-container">
+            <button class="heart-button" onclick="showHearts()">
+                Bende seni seviyorum aşkım ♥️
+                <span style="top: -10px; left: -20px;">♥</span>
+                <span style="top: -20px; right: -15px;">♥</span>
+            </button>
+        </div>
+
+        <!-- Kalp ve kedi patlaması -->
+        <div id="hearts"></div>
+
+        <!-- Final Mesajı -->
+        <div class="final-message">
+            <p>♥️🌸 Seni Seviyorum 🌸♥️</p>
+        </div>
+
+        <!-- Kedi Emoji -->
+        <div class="cat-emoji">
+            🐱🐾
+        </div>
+
+        <!-- Etiket -->
+        <div class="hashtag">
+            <p>@madeinSumut</p>
+        </div>
+    </div>
+
+    <script>
+        function showHearts() {
+            const heartsContainer = document.getElementById("hearts");
+            for (let i = 0; i < 50; i++) {
+                const heart = document.createElement("span");
+                heart.innerHTML = "♥️";
+                heart.style.position = "absolute";
+                heart.style.left = Math.random() * window.innerWidth + "px";
+                heart.style.top = Math.random() * window.innerHeight + "px";
+                heart.style.fontSize = Math.random() * 30 + 15 + "px";
+                heart.style.animation = "moveHeart 3s ease-in-out forwards";
+                heartsContainer.appendChild(heart);
+
+                setTimeout(() => {
+                    heart.remove();
+                }, 3000);
+            }
+        }
+
+        // Kalp hareketi animasyonu
+        document.styleSheets[0].insertRule(`
+            @keyframes moveHeart {
+                0% { transform: scale(1); opacity: 1; }
+                100% { transform: translateY(-200px) scale(2); opacity: 0; }
+            }
+        `);
+    </script>
+
+</body>
+</html>
